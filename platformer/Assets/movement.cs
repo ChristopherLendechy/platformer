@@ -32,8 +32,8 @@ public class movement : MonoBehaviour
         collider = GetComponent<Collider>();
         animComp = GetComponentInChildren<Animator>();
         body = GetComponent<Rigidbody>();
-        _uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
-        
+        //_uiManager = GameObject.Find("UIManager").GetComponent<UIManager>();
+        _uiManager = gameObject.GetComponent<UIManager>();
         
     }
 
@@ -108,6 +108,7 @@ public class movement : MonoBehaviour
     {
         Ray ray = new Ray(transform.position, Vector3.up);
 
+        
         if (Physics.Raycast(ray, out RaycastHit hitInfo, proximityThreshold))
         {
             Debug.DrawRay(transform.position,Vector3.up * proximityThreshold, Color.red);
