@@ -23,7 +23,7 @@ public class movement : MonoBehaviour
     public float speedCap;
 
     public float proximityThreshold = 10f;
-    public UIManager _uiManager;
+    private UIManager _uiManager;
     
     void Start()
     {
@@ -91,6 +91,19 @@ public class movement : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Lava")
+        {
+            Debug.Log("You died!");
+        }
+
+        if (other.gameObject.tag == "Goal")
+        {
+            Debug.Log("YOU WIN!");
+        }
+    }
+
     private void OnCollisionExit(Collision other)
     {
         Ray ray = new Ray(transform.position, Vector3.up);
@@ -112,4 +125,5 @@ public class movement : MonoBehaviour
             }
         }
     }
+    
 }

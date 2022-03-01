@@ -9,6 +9,9 @@ public class LevelParser : MonoBehaviour
     public GameObject brickPrefab;
     public GameObject questionBoxPrefab;
     public GameObject stonePrefab;
+    public GameObject lavaPrefab;
+    public GameObject goalPrefab;
+    
     public Transform environmentRoot;
 
     // --------------------------------------------------------------------------
@@ -84,8 +87,17 @@ public class LevelParser : MonoBehaviour
                     var testObject = Instantiate(brickPrefab);
                     testObject.transform.position = new Vector3(column, row, 0f);
                 }
-                
-                    
+
+                if (letter == 'l')
+                {
+                    var testObject = Instantiate(lavaPrefab);
+                    testObject.transform.position = new Vector3(column, row, 0f);
+                }
+                if (letter == 'g')
+                {
+                    var testObject = Instantiate(goalPrefab);
+                    testObject.transform.position = new Vector3(column, row, 0f);
+                }
                 column++;
             }
             row++;
