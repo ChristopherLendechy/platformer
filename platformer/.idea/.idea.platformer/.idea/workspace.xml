@@ -17,6 +17,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/Documents/GitHub/pong/pong/Assets/Scripts/ScoreTracker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/InputModules/StandaloneInputModule.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -71,6 +72,8 @@
       <workItem from="1645348512639" duration="687000" />
       <workItem from="1645386530995" duration="7650000" />
       <workItem from="1645420334028" duration="4917000" />
+      <workItem from="1646026424064" duration="2857000" />
+      <workItem from="1646083964368" duration="8649000" />
     </task>
     <servers />
   </component>

@@ -34,6 +34,7 @@ public class CameraRaycast : MonoBehaviour
                 if (boxC != null && boxC.tag.Equals("Brick"))
                 {
                     Destroy(boxC.gameObject);
+                    _uiManager.UpdateText("Brick",0);
                     
                 }
                 else if (boxC != null && boxC.tag.Equals("Question"))
