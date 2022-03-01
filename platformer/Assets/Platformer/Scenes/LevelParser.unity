@@ -212,11 +212,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e6568559d6661b4eba05e67f1401a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filename: Test
+  filename: custom
   rockPrefab: {fileID: 2348115052682696286, guid: 8a31c4670fe539b4db96d07a19482732, type: 3}
   brickPrefab: {fileID: 2652198492393551387, guid: d94221691cf23ce429136e2be05d002b, type: 3}
   questionBoxPrefab: {fileID: 2652198492393551387, guid: 97d0fe6850ab3714eaa654f26f4ca9f8, type: 3}
   stonePrefab: {fileID: 2652198492393551387, guid: e2bf2963d586ea44ea04e84c9ae1fa8e, type: 3}
+  lavaPrefab: {fileID: 2652198492393551387, guid: 981bb3414d36746408a1c5ee5244f1b1, type: 3}
+  goalPrefab: {fileID: 2652198492393551387, guid: 0d80bc8bbe702c9449c336395f17990c, type: 3}
   environmentRoot: {fileID: 727678647}
 --- !u!4 &425892206 stripped
 Transform:
@@ -477,8 +479,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1b350468da476d44784643c3d9a36f48, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 0.21568629, g: 0.21568629, b: 0.21568629, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -515,6 +517,7 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
+  - component: {fileID: 963194230}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -557,7 +560,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.329963
+  orthographic size: 6.723415
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -601,7 +604,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 778a39773d962eb4ba95e4eb06175c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _uiManager: {fileID: 601075999}
+  _uiManager: {fileID: 0}
+--- !u!114 &963194230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca6a853ee2726b244819133aca1ec0f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObject: {fileID: 1728545375}
+  cameraOffset: {x: 0, y: 0, z: 0}
+  smoothFactor: 0.5
 --- !u!1 &1017167956
 GameObject:
   m_ObjectHideFlags: 0
@@ -826,12 +844,24 @@ PrefabInstance:
       value: -1.78
       objectReference: {fileID: 0}
     - target: {fileID: -1832059294903608235, guid: 6f4328ad71c3f4f448893c896b677839, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1832059294903608235, guid: 6f4328ad71c3f4f448893c896b677839, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: -1832059294903608235, guid: 6f4328ad71c3f4f448893c896b677839, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6f4328ad71c3f4f448893c896b677839, type: 3}
       propertyPath: m_Name
       value: Smolame_seafoamboy_anims
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 6f4328ad71c3f4f448893c896b677839, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 6f4328ad71c3f4f448893c896b677839, type: 3}
       propertyPath: m_Controller
@@ -840,6 +870,10 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 6f4328ad71c3f4f448893c896b677839, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8088244840920263541, guid: 6f4328ad71c3f4f448893c896b677839, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f4328ad71c3f4f448893c896b677839, type: 3}
@@ -914,7 +948,7 @@ MonoBehaviour:
   jumpForce: 20
   feetInContactWithGround: 0
   speedCap: 0
-  proximityThreshold: 1
+  proximityThreshold: 1.1
 --- !u!54 &1728545371
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1003,7 +1037,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728545369}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.54, y: 3.37, z: 0}
+  m_LocalPosition: {x: 14.38, y: 3.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
