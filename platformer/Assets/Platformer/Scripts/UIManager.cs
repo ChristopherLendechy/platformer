@@ -8,7 +8,7 @@ using UnityEngine.SocialPlatforms.Impl;
 public class UIManager : MonoBehaviour
 {
     // variables for the ui countdown
-    private int _totalTime = 10;
+    private int _totalTime = 100;
     private float _accumulatedTime = 0f;
     
     public TextMeshProUGUI gameText;
